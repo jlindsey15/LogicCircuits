@@ -71,7 +71,7 @@ public class Main implements Serializable {
 		JButton saveButton = new JButton("Save");
 		JButton eraseButton = new JButton("Erase");
 		JButton loadButton = new JButton("Load");
-		JButton saveBlackBoxButton = new JButton("Save  as Custom Gate");
+		JButton saveBlackBoxButton = new JButton("Save as Custom Gate");
 		JButton loadBlackBoxButton = new JButton("Load Custom Gate");
 		JButton addBlackBoxButton = new JButton ("Add Custom Gate");
 		
