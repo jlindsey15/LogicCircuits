@@ -50,27 +50,31 @@ public class Main implements Serializable {
 	Main() {
 		//GUI FORMATTING STUFF BEGINS
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		Dimension dimension = new Dimension(1600,400); //dimension size
-		frame.setMinimumSize(dimension);
+		frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
 		
 		frame.add(header, BorderLayout.PAGE_START);
 		drawPanel.setLayout(null);
 		frame.add(drawPanel);
+		JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
 		JPanel buttonspanel = new JPanel();
-		frame.add(buttonspanel, BorderLayout.PAGE_END);
-		JButton andbutton = new JButton("Add an And Gate");
-		JButton orbutton = new JButton("Add an Or Gate");
-		JButton notbutton = new JButton("Add a Not Gate");
-		JButton newConnectionButton = new JButton("Add a Connection");
-		JButton startButton = new JButton("Add a Start Point");
-		JButton endButton = new JButton("Add an End Point");
+		JPanel buttonspanel2 = new JPanel();
+		splitPane.setTopComponent(buttonspanel);
+		splitPane.setBottomComponent(buttonspanel2);
+		frame.add(splitPane, BorderLayout.PAGE_END);
+		JButton andbutton = new JButton("Add AND Gate");
+		JButton orbutton = new JButton("Add OR Gate");
+		JButton notbutton = new JButton("Add NOT Gate");
+		JButton newConnectionButton = new JButton("Add Connection");
+		JButton startButton = new JButton("Add Start Point");
+		JButton endButton = new JButton("Add End Point");
 		JButton simulateButton = new JButton("Simulate");
 		JButton saveButton = new JButton("Save");
 		JButton eraseButton = new JButton("Erase");
 		JButton loadButton = new JButton("Load");
-		JButton saveBlackBoxButton = new JButton("Save as BB");
-		JButton loadBlackBoxButton = new JButton("Load black box");
-		JButton addBlackBoxButton = new JButton ("Add black box");
+		JButton saveBlackBoxButton = new JButton("Save  as Custom Gate");
+		JButton loadBlackBoxButton = new JButton("Load Custom Gate");
+		JButton addBlackBoxButton = new JButton ("Add Custom Gate");
+		
 		
 		
 		buttonspanel.add(andbutton);
@@ -80,12 +84,12 @@ public class Main implements Serializable {
 		buttonspanel.add(startButton);
 		buttonspanel.add(endButton);
 		buttonspanel.add(simulateButton);
-		buttonspanel.add(eraseButton);
-		buttonspanel.add(saveButton);
-		buttonspanel.add(loadButton);
-		buttonspanel.add(saveBlackBoxButton);
-		buttonspanel.add(loadBlackBoxButton);
-		buttonspanel.add(addBlackBoxButton);
+		buttonspanel2.add(eraseButton);
+		buttonspanel2.add(saveButton);
+		buttonspanel2.add(loadButton);
+		buttonspanel2.add(saveBlackBoxButton);
+		buttonspanel2.add(loadBlackBoxButton);
+		buttonspanel2.add(addBlackBoxButton);
 		
 		//GUI FORMATTING STUFF ENDS.  button event handling below.  To see what the buttons actually do,
 		//Go to the function inside "actionPerformed"
